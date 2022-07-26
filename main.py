@@ -73,7 +73,7 @@ forbidden_messages = [
     'Meows favourite snack is kawaii poki and ramune!!','are you cringing yet?(UwU)','I AM DESINGED TO CREATE PAIN,SUFFERING,AND CRINGE'
 ]
 #sj code:may be destructive
-secrets=['https://www.youtube.com/watch?v=m6OCJxOsiyw&list=PLpd5iyNqlzHTyiabKDQMK_m--PfEzOZBx&index=20','https://www.youtube.com/watch?v=bIXm-Q-Xa4s&list=PL3KnTfyhrIlcudeMemKd6rZFGDWyK23vx&index=26','https://www.youtube.com/watch?v=UtPZcwPnvkw&list=PL3KnTfyhrIlcudeMemKd6rZFGDWyK23vx&index=37','https://www.youtube.com/watch?v=8F9jXYOH2c0','https://www.youtube.com/watch?v=oY2nVQNlUB8','https://www.youtube.com/watch?v=9E3nxoFjt4o',]
+secrets=['https://www.youtube.com/watch?v=m6OCJxOsiyw&list=PLpd5iyNqlzHTyiabKDQMK_m--PfEzOZBx&index=20','https://www.youtube.com/watch?v=bIXm-Q-Xa4s&list=PL3KnTfyhrIlcudeMemKd6rZFGDWyK23vx&index=26','https://www.youtube.com/watch?v=UtPZcwPnvkw&list=PL3KnTfyhrIlcudeMemKd6rZFGDWyK23vx&index=37','https://www.youtube.com/watch?v=8F9jXYOH2c0','https://www.youtube.com/watch?v=oY2nVQNlUB8','https://www.youtube.com/watch?v=9E3nxoFjt4o','https://www.youtube.com/watch?v=W12vb_Crf00']
 id = {
     '759221652231290881': 0,
     '822223581034971168': 1,
@@ -122,7 +122,11 @@ async def on_message(message):
         await message.channel.send(forbidden_messages[random.randint(
             0,
             len(forbidden_messages) - 1)])
-        
+#SJ CODE BELOW:REMOVE IF FAULTY
+    if message.content.startswith('/secret_47'):
+        await message.channel.send(secrets[random.randint(
+            0,
+            len(secrets) - 1)])
     if ("fork" in message.content.lower()
         ) and not ("fork repellent" in message.content
                    or "forkrepellent" in message.content):
